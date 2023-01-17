@@ -1,0 +1,41 @@
+$fonte: 'Roboto', sans-serif;
+
+// Cores: 
+$background-color: white;
+$cor-primaria: #F07DEA;
+$cor-secundaria: #A460ED;
+$cor-terciaria: #EEEEEE;
+$texto-cor: black;
+
+@mixin light-mode{
+    $background-color: white;
+    $cor-primaria: #F07DEA;
+    $cor-secundaria: #A460ED;
+    $cor-terciaria: #EEEEEE;
+    $texto-cor: black;
+}
+.light-mode{
+    @include light-mode();
+}
+
+@mixin dark-mode{
+    $background-color: #4C0033;
+    $cor-primaria: #790252;
+    $cor-secundaria: #AF0171;
+    $cor-terciaria: #E80F88;
+    $texto-cor: white;
+}
+.dark-mode{
+    @include dark-mode();
+}
+
+
+@media (prefers-color-scheme: light) {
+    body {
+      @include dark-mode;
+    }  
+}
+
+// tamanho das fontes
+
+$tamanho-do-texto: 3rem;
